@@ -83,7 +83,9 @@ public class Initialization {
 //			subjects.add(new Subject(1,"DC",4,false, "CS"));
 
 			csvFile = "/home/darshan/CS/SE/research/Timetable-Generator-using-Genetic-Algorithm-master/src/dynamicTT/Subjects.csv";
-		    br = null;
+			String csv = "/home/darshan/CS/SE/research/Timetable-Generator-using-Genetic-Algorithm-master/src/dynamicTT/Courses.csv";
+			BufferedReader course = new BufferedReader(new FileReader(csv));
+			br = null;
 //			subjects.add(new Subject(1,"DC",4,false, "CS"));
 		    ArrayList<StudentGroups> studentGroups;
 		    line = "";
@@ -95,11 +97,10 @@ public class Initialization {
                 if(country[0].equals("#"))
                 {
                 	System.out.println("new course creation.......");
-                	String csv = "/home/darshan/CS/SE/research/Timetable-Generator-using-Genetic-Algorithm-master/src/dynamicTT/Courses.csv";
+                	
 //        			subjects.add(new Subject(1,"DC",4,false, "CS"));
 
         		    String lines = "";
-        		    BufferedReader course = new BufferedReader(new FileReader(csv));
         		    lines = course.readLine();
         		    String[] temp = lines.split(cvsSplitBy);
         			Course course1 = new Course(Integer.parseInt(temp[0]), temp[1], subjects);
