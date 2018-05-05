@@ -81,8 +81,9 @@ public class Initialization {
 			String courseName="BTech.C.S. Part I";
 			System.out.println("reading input.......");
 //			subjects.add(new Subject(1,"DC",4,false, "CS"));
-
+			
 			csvFile = "/home/darshan/CS/SE/research/Timetable-Generator-using-Genetic-Algorithm-master/src/dynamicTT/Subjects.csv";
+			//CSV file for student groups.			
 			String csv = "/home/darshan/CS/SE/research/Timetable-Generator-using-Genetic-Algorithm-master/src/dynamicTT/Courses.csv";
 			BufferedReader course = new BufferedReader(new FileReader(csv));
 			br = null;
