@@ -159,7 +159,10 @@ public class GeneticAlgorithm {
 							String professorName2=lecture2.getLecture().getProfessor().getProfessorName();							
 							String stgrp1=lecture1.getLecture().getStudentGroup().getName();
 							String stgrp2=lecture2.getLecture().getStudentGroup().getName();							
-							if(stgrp1.equals(stgrp2) || professorName1.equals(professorName2)){
+							if(stgrp1.equals(stgrp2)){
+								score=score+1;
+							}
+							if(professorName1.equals(professorName2)){
 								score=score+1;
 							}
 								ArrayList<Combination> stcomb1 = lecture1.getLecture().getStudentGroup().getCombination();
@@ -217,7 +220,20 @@ public class GeneticAlgorithm {
 				
 				day1.setTimeSlot(timeSlotsOfday2);
 				day2.setTimeSlot(timeSlotsOfday1);
-				
+				rnd1=randomGenerator.nextInt(5);
+				rnd2=-1;
+				while(rnd1!=rnd2){
+					rnd2=randomGenerator.nextInt(5);
+				}
+				timeSlotsOfday1.set(rnd1,timeSlotsOfday2.get(rnd2));
+				rnd1=randomGenerator.nextInt(5);
+				rnd2=-1;
+				while(rnd1!=rnd2){
+					rnd2=randomGenerator.nextInt(5);
+				}
+				timeSlotsOfday2.set(rnd1,timeSlotsOfday1.get(rnd2));
+//				Collections.shuffle(day1.getTimeSlot());
+//				Collections.shuffle(day2.getTimeSlot());
 				// if i am limiting this to two days i am breaking out... 
 				//or else all the days will get exchanged in a sorted order
 				//like monday-tue,wed thu,fri sat in pairs!
